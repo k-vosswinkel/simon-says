@@ -1,21 +1,28 @@
-<div class="container">
-  <div class="row">
-    <button value='1' id="red" class="btn btn-danger colorButton"></button>
-    <button value='2' id="yellow" class="btn btn-warning colorButton"></button>
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <script defer src='app.js'></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <div class="container">
+    <div class="row">
+      <button value='1' id="red" class="btn btn-danger colorButton"></button>
+      <button value='2' id="yellow" class="btn btn-warning colorButton"></button>
+    </div>
+    <div class="row bottomHalf">
+      <button value='3' id="blue" class="btn btn-primary colorButton"></button>
+      <button value='4' id="green" class="btn btn-success colorButton"></button>
+    </div>
+    <div class="row">
+      <div id="counter">00</div>
+    </div>
+    <div class="row">
+      <button id="start" class="btn btn-default">start</button>
+      <button id="reset" class="btn btn-default">reset</button>
+    </div>
+    <div>
+      <div id='win'>You Win! :D</div>
+      <div id='lose'>You Lose! :(</div>
+    </div>
   </div>
-  <div class="row bottomHalf">
-    <button value='3' id="blue" class="btn btn-primary colorButton"></button>
-    <button value='4' id="green" class="btn btn-success colorButton"></button>
-  </div>
-  <div class="row">
-    <div id="counter">00</div>
-  </div>
-  <div class="row">
-    <button id="start" class="btn btn-default">start</button>
-    <button id="reset" class="btn btn-default">reset</button>
-  </div>
-  <div>
-    <div id='win'>You Win! :D</div>
-    <div id='lose'>You Lose! :(</div>
-  </div>
-</div>
+</html>
