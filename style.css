@@ -1,3 +1,28 @@
+/* Sections & Layout */
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.game-board {
+  width: 30vw;
+  height: 100vh;
+  align-self: center;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.circleHalf {
+  padding-top: 5px;
+}
+
+/* Game State */
 #win {
   opacity: 0;
 }
@@ -6,12 +31,25 @@
   opacity: 0;
 }
 
-#counter {
-  width: 100px;
-  height: 90px;
-  background-color: #ccc;
-  float: left;
+.section {
+  padding: 10px;
+  margin: 10px;
+}
+
+#count {
+  display: flex;
+  justify-content: center;
   margin: 5px 5px 5px 0px;
+}
+
+/* Buttons */
+button {
+  outline: none;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
 }
 
 #red {
@@ -64,13 +102,4 @@
 
 .green {
   background-color: #68ff68 !important;
-}
-
-.bottomHalf {
-  padding-top: 5px;
-}
-
-.btn {
-  width: 100px;
-  height: 100px;
 }
