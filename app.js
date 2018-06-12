@@ -3,7 +3,7 @@ let gameArray = [];
 let playerArray = [];
 
 let reset = () => {
-  console.log('resetting')
+  // Reset the game array and player array; remove any messaging and allow button clicks
   gameArray = [];
   playerArray = [];
   $('#win').fadeTo("fast", 0);
@@ -13,12 +13,9 @@ let reset = () => {
 
 // Define the play for each 'round'
 let playRound = () => {
-  // Add one random number to our game's array and keep track of a counter for indexing; don't forget to start each round with an empty player array.
+  // Start each round with an empty counter and player array; map our colors
   let i = 0;
   playerArray = []
-  let randomNum = Math.floor(Math.random() * 4) + 1;
-  gameArray.push(randomNum);
-
   numToColor = {
     1: 'red',
     2: 'yellow',
@@ -26,14 +23,20 @@ let playRound = () => {
     4: 'green'
   }
 
+  // Add a random number to gameArray, giving us the pattern to follow
+  let randomNum = Math.floor(Math.random() * 4) + 1;
+  gameArray.push(randomNum);
+
+  // Increment the round
+  $('#counter').text(gameArray.length)
+
   // Play back our game array
   function myLoop() {
-    //change color of corresponding button; change it back
+    // Highlight the selected button for a few moments
     setTimeout(() => {
       let currentColor = numToColor[gameArray[i]];
       $(`#${currentColor}`).addClass(currentColor)
       setTimeout(() => {
-        console.log('removing color here')
         $(`#${currentColor}`).removeClass(currentColor)
       }, 500)
       i++;
@@ -45,18 +48,17 @@ let playRound = () => {
   }
 
   myLoop();
-  console.log('game array: ', gameArray)
 }
 
-// Start Button
+// Start Button kicks off a round
 $('#start').click(() => {
   playRound();
 });
 
-// Reset Button
+// Reset Button clears the game
 $('#reset').click(reset)
 
-// All Color Buttons
+// Listen to all color buttons for player input
 $('.colorButton').click((button) => {
   let currentButton = button.target.id;
   let currentValue = Number(button.target.value);
@@ -73,12 +75,12 @@ $('.colorButton').click((button) => {
   if (currentValue !== gameArray[currentIndex]) {
     $('#lose').fadeTo("fast", 1)
     $('.colorButton, #start').prop('disabled', true)
-  } else if (playerArray.length === 2) {
+  } else if (playerArray.length === 5) {
     $('#win').fadeTo("fast", 1)
     $('.colorButton, #start').prop('disabled', true)
   } else if (playerArray.length === gameArray.length) {
-    playRound();
+    setTimeout(() => {
+      playRound();
+    }, 750)
   }
-
-  console.log("player array: ", playerArray)
 })
