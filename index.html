@@ -4,6 +4,7 @@
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src='app.js'></script>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
   <div class="container">
     <div class="game-board">
@@ -19,14 +20,16 @@
         <button value='4' id="green" class="btn btn-success colorButton"></button>
       </div>
       <div class="row section">
-        <div class="header">Round Number:</div>
-        <div id="count">0</div>
+        <div class="header">
+          <div>Round Number:</div>
+          <div id="count">0</div>
+        </div>
       </div>
-      <div class="row">
+      <div class="row section">
         <button id="start" class="btn btn-default">start</button>
         <button id="reset" class="btn btn-default">reset</button>
       </div>
-      <div class="row">
+      <div class="row section">
         <div id='win'>You Win! :D</div>
         <div id='lose'>You Lose! :(</div>
       </div>

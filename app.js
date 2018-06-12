@@ -28,7 +28,7 @@ let playRound = () => {
   gameArray.push(randomNum);
 
   // Increment the round
-  $('#counter').text(gameArray.length)
+  $('#count').text(gameArray.length)
 
   // Play back our game array
   function myLoop() {
