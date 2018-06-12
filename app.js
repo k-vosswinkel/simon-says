@@ -28,8 +28,6 @@ let playRound = () => {
 
   // Play back our game array
   function myLoop() {
-    console.log('looping')
-    console.log(numToColor[gameArray[i]])
     //change color of corresponding button; change it back
     setTimeout(() => {
       let currentColor = numToColor[gameArray[i]];
